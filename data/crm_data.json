@@ -1,0 +1,828 @@
+{
+  "clients": [
+    {
+      "client_id": "MM-2024-001",
+      "name": "Александр Петров",
+      "phone": "+7 (985) 123-45-67",
+      "email": "a.petrov@company.ru",
+      "company": "Петров Капитал",
+      "previous_purchases": [
+        {
+          "brand": "Mercedes-Benz",
+          "model": "S-Class W223",
+          "year": 2022,
+          "price": 15000000,
+          "purchase_date": "2022-03-15"
+        }
+      ],
+      "budget_range": {
+        "min": 30000000,
+        "max": 50000000,
+        "currency": "RUB"
+      },
+      "preferences": {
+        "type": "luxury_sedan",
+        "colors": ["черный", "темно-синий", "серый"],
+        "features": ["спортивный пакет", "премиум звук", "массаж сидений"],
+        "brands_interested": ["Bentley", "Rolls-Royce", "Mercedes-Maybach"]
+      },
+      "deal_status": "qualification",
+      "last_contact": "2024-01-20",
+      "notes": "VIP клиент, предпочитает личные встречи, интересуется новым Bentley Flying Spur"
+    },
+    {
+      "client_id": "MM-2024-002",
+      "name": "Михаил Золотов",
+      "phone": "+7 (916) 234-56-78",
+      "email": "m.zolotov@goldcapital.ru",
+      "company": "Gold Capital Management",
+      "previous_purchases": [
+        {
+          "brand": "Porsche",
+          "model": "911 Turbo S",
+          "year": 2023,
+          "price": 25000000,
+          "purchase_date": "2023-06-10"
+        },
+        {
+          "brand": "Range Rover",
+          "model": "Autobiography LWB",
+          "year": 2022,
+          "price": 18000000,
+          "purchase_date": "2022-11-20"
+        }
+      ],
+      "budget_range": {
+        "min": 40000000,
+        "max": 70000000,
+        "currency": "RUB"
+      },
+      "preferences": {
+        "type": "sports_luxury",
+        "colors": ["британский зеленый", "черный"],
+        "features": ["W12 двигатель", "Mulliner отделка", "ночное видение"],
+        "brands_interested": ["Bentley", "Aston Martin", "Ferrari"]
+      },
+      "deal_status": "negotiation",
+      "last_contact": "2024-01-25",
+      "notes": "Коллекционер, интересуется эксклюзивными комплектациями"
+    },
+    {
+      "client_id": "MM-2024-003",
+      "name": "Елена Бриллиантова",
+      "phone": "+7 (903) 345-67-89",
+      "email": "e.brilliantova@luxury.ru",
+      "previous_purchases": [],
+      "budget_range": {
+        "min": 35000000,
+        "max": 45000000,
+        "currency": "RUB"
+      },
+      "preferences": {
+        "type": "luxury_suv",
+        "colors": ["белый перламутр", "шампань"],
+        "features": ["панорамная крыша", "премиум интерьер", "автопилот"],
+        "brands_interested": ["Bentley Bentayga", "Rolls-Royce Cullinan"]
+      },
+      "deal_status": "new_lead",
+      "last_contact": "2024-01-26",
+      "notes": "Первая покупка в премиум сегменте, подарок мужу на юбилей"
+    },
+    {
+      "client_id": "MM-2024-004",
+      "name": "Виктор Сапфиров",
+      "phone": "+7 (977) 456-78-90",
+      "email": "v.sapfirov@tech.ru",
+      "company": "Sapphire Technologies",
+      "previous_purchases": [
+        {
+          "brand": "BMW",
+          "model": "M8 Competition",
+          "year": 2023,
+          "price": 15000000,
+          "purchase_date": "2023-01-15"
+        }
+      ],
+      "budget_range": {
+        "min": 25000000,
+        "max": 40000000,
+        "currency": "RUB"
+      },
+      "preferences": {
+        "type": "grand_tourer",
+        "colors": ["темно-красный", "черный"],
+        "features": ["карбоновые детали", "спорт выхлоп", "керамические тормоза"],
+        "brands_interested": ["Bentley Continental GT", "Aston Martin DB12"]
+      },
+      "deal_status": "presentation",
+      "last_contact": "2024-01-22",
+      "notes": "IT предприниматель, ценит технологии и инновации"
+    },
+    {
+      "client_id": "MM-2024-005",
+      "name": "Анна Изумрудова",
+      "phone": "+7 (926) 567-89-01",
+      "email": "a.izumrudova@fashion.ru",
+      "company": "Emerald Fashion Group",
+      "previous_purchases": [
+        {
+          "brand": "Maserati",
+          "model": "Levante Trofeo",
+          "year": 2022,
+          "price": 12000000,
+          "purchase_date": "2022-08-20"
+        }
+      ],
+      "budget_range": {
+        "min": 50000000,
+        "max": 80000000,
+        "currency": "RUB"
+      },
+      "preferences": {
+        "type": "ultra_luxury_sedan",
+        "colors": ["двухцветная окраска", "индивидуальный цвет"],
+        "features": ["ручная роспись", "персонализация", "звездное небо"],
+        "brands_interested": ["Rolls-Royce Phantom", "Rolls-Royce Ghost"]
+      },
+      "deal_status": "qualification",
+      "last_contact": "2024-01-24",
+      "notes": "Владелица сети бутиков, важна эксклюзивность и персонализация"
+    },
+    {
+      "client_id": "MM-2024-006",
+      "name": "Дмитрий Алмазов",
+      "phone": "+7 (905) 678-90-12",
+      "email": "d.almazov@mining.ru",
+      "company": "Diamond Mining Corp",
+      "previous_purchases": [
+        {
+          "brand": "Bentley",
+          "model": "Bentayga Speed",
+          "year": 2021,
+          "price": 28000000,
+          "purchase_date": "2021-09-10"
+        },
+        {
+          "brand": "Ferrari",
+          "model": "SF90 Stradale",
+          "year": 2020,
+          "price": 45000000,
+          "purchase_date": "2020-12-05"
+        }
+      ],
+      "budget_range": {
+        "min": 60000000,
+        "max": 120000000,
+        "currency": "RUB"
+      },
+      "preferences": {
+        "type": "hypercar",
+        "colors": ["carbon black", "electric blue"],
+        "features": ["гибридная силовая установка", "треки пакет", "персонализация салона"],
+        "brands_interested": ["McLaren", "Koenigsegg", "Ferrari", "Lamborghini"]
+      },
+      "deal_status": "closed_won",
+      "last_contact": "2024-01-28",
+      "notes": "Владелец горнодобывающей компании, коллекционер суперкаров, заказал McLaren Artura"
+    },
+    {
+      "client_id": "MM-2024-007",
+      "name": "София Рубинова",
+      "phone": "+7 (917) 789-01-23",
+      "email": "s.rubinova@realestate.ru",
+      "company": "Ruby Real Estate Group",
+      "previous_purchases": [
+        {
+          "brand": "Porsche",
+          "model": "Cayenne Turbo S E-Hybrid",
+          "year": 2023,
+          "price": 16000000,
+          "purchase_date": "2023-03-20"
+        }
+      ],
+      "budget_range": {
+        "min": 35000000,
+        "max": 55000000,
+        "currency": "RUB"
+      },
+      "preferences": {
+        "type": "luxury_convertible",
+        "colors": ["белый", "серебристый", "розовое золото"],
+        "features": ["кабриолет", "подогрев всех сидений", "wind deflector"],
+        "brands_interested": ["Bentley Continental GTC", "Mercedes-Maybach SL", "Ferrari Portofino M"]
+      },
+      "deal_status": "demonstration",
+      "last_contact": "2024-01-27",
+      "notes": "Риэлтор премиум недвижимости, любит открытые автомобили, запланирован тест-драйв Bentley GTC"
+    },
+    {
+      "client_id": "MM-2024-008",
+      "name": "Артем Платинов",
+      "phone": "+7 (929) 890-12-34",
+      "email": "a.platinov@crypto.ru",
+      "company": "Platinum Blockchain Solutions",
+      "previous_purchases": [
+        {
+          "brand": "Tesla",
+          "model": "Model S Plaid",
+          "year": 2022,
+          "price": 12000000,
+          "purchase_date": "2022-07-15"
+        }
+      ],
+      "budget_range": {
+        "min": 45000000,
+        "max": 85000000,
+        "currency": "RUB"
+      },
+      "preferences": {
+        "type": "electric_luxury",
+        "colors": ["matrix black", "storm grey"],
+        "features": ["электропривод", "футуристичный дизайн", "автономное вождение"],
+        "brands_interested": ["BMW iX M60", "Mercedes EQS AMG", "Porsche Taycan Turbo S"]
+      },
+      "deal_status": "consideration",
+      "last_contact": "2024-01-26",
+      "notes": "Молодой криптопредприниматель, интересуется электромобилями премиум-класса"
+    },
+    {
+      "client_id": "MM-2024-009",
+      "name": "Василий Титанов",
+      "phone": "+7 (934) 901-23-45",
+      "email": "v.titanov@steel.ru",
+      "company": "Titanium Steel Industries",
+      "previous_purchases": [
+        {
+          "brand": "Mercedes-Benz",
+          "model": "G 63 AMG",
+          "year": 2021,
+          "price": 22000000,
+          "purchase_date": "2021-11-30"
+        },
+        {
+          "brand": "Rolls-Royce",
+          "model": "Phantom VIII",
+          "year": 2019,
+          "price": 55000000,
+          "purchase_date": "2019-06-15"
+        }
+      ],
+      "budget_range": {
+        "min": 55000000,
+        "max": 90000000,
+        "currency": "RUB"
+      },
+      "preferences": {
+        "type": "armored_luxury",
+        "colors": ["jet black", "armored grey"],
+        "features": ["бронированный кузов", "защитные стекла", "run-flat шины", "коммуникационный пакет"],
+        "brands_interested": ["Mercedes-Maybach S-Guard", "BMW X7 Protection", "Rolls-Royce Cullinan Armored"]
+      },
+      "deal_status": "specification",
+      "last_contact": "2024-01-29",
+      "notes": "Промышленник, требует высокий уровень безопасности, заказывает бронированные версии"
+    },
+    {
+      "client_id": "MM-2024-010",
+      "name": "Марина Жемчугова",
+      "phone": "+7 (945) 012-34-56",
+      "email": "m.zhemchugova@media.ru",
+      "company": "Pearl Media Holding",
+      "previous_purchases": [
+        {
+          "brand": "Maserati",
+          "model": "MC20",
+          "year": 2023,
+          "price": 35000000,
+          "purchase_date": "2023-08-12"
+        }
+      ],
+      "budget_range": {
+        "min": 40000000,
+        "max": 65000000,
+        "currency": "RUB"
+      },
+      "preferences": {
+        "type": "italian_supercar",
+        "colors": ["bianco audace", "rosso magma"],
+        "features": ["V6 Nettuno engine", "carbon fiber body", "race mode"],
+        "brands_interested": ["Ferrari 296 GTB", "Lamborghini Huracán Tecnica", "McLaren GT"]
+      },
+      "deal_status": "warm_lead",
+      "last_contact": "2024-01-25",
+      "notes": "Медиамагнат, ценит итальянский дизайн и производительность"
+    },
+    {
+      "client_id": "MM-2024-011",
+      "name": "Константин Кристаллов",
+      "phone": "+7 (956) 123-45-67",
+      "email": "k.kristallov@pharma.ru",
+      "company": "Crystal Pharmaceuticals",
+      "previous_purchases": [
+        {
+          "brand": "Aston Martin",
+          "model": "DBS Superleggera",
+          "year": 2022,
+          "price": 38000000,
+          "purchase_date": "2022-05-18"
+        }
+      ],
+      "budget_range": {
+        "min": 50000000,
+        "max": 75000000,
+        "currency": "RUB"
+      },
+      "preferences": {
+        "type": "british_grand_tourer",
+        "colors": ["azure blue", "silver fox"],
+        "features": ["V12 двигатель", "ручная сборка", "carbon ceramic brakes"],
+        "brands_interested": ["Aston Martin DB12", "Bentley Continental GT Speed", "McLaren GT"]
+      },
+      "deal_status": "follow_up",
+      "last_contact": "2024-01-23",
+      "notes": "Фармацевт, коллекционер британских суперкаров"
+    },
+    {
+      "client_id": "MM-2024-012",
+      "name": "Надежда Опалова",
+      "phone": "+7 (967) 234-56-78",
+      "email": "n.opalova@energy.ru",
+      "company": "Opal Energy Systems",
+      "previous_purchases": [
+        {
+          "brand": "Bentley",
+          "model": "Mulsanne Speed",
+          "year": 2020,
+          "price": 42000000,
+          "purchase_date": "2020-10-25"
+        }
+      ],
+      "budget_range": {
+        "min": 60000000,
+        "max": 100000000,
+        "currency": "RUB"
+      },
+      "preferences": {
+        "type": "ultra_luxury_limousine",
+        "colors": ["royal blue", "champagne gold"],
+        "features": ["extended wheelbase", "reclining rear seats", "privacy partition", "champagne cooler"],
+        "brands_interested": ["Rolls-Royce Phantom Extended", "Mercedes-Maybach S 680", "Bentley Flying Spur Mulliner"]
+      },
+      "deal_status": "proposal_sent",
+      "last_contact": "2024-01-30",
+      "notes": "Энергетический магнат, нужен представительский автомобиль для деловых встреч"
+    },
+    {
+      "client_id": "MM-2024-013",
+      "name": "Роман Агатов",
+      "phone": "+7 (978) 345-67-89",
+      "email": "r.agatov@aviation.ru",
+      "company": "Agate Aviation Group",
+      "previous_purchases": [
+        {
+          "brand": "Lamborghini",
+          "model": "Aventador SVJ",
+          "year": 2021,
+          "price": 48000000,
+          "purchase_date": "2021-04-20"
+        }
+      ],
+      "budget_range": {
+        "min": 70000000,
+        "max": 150000000,
+        "currency": "RUB"
+      },
+      "preferences": {
+        "type": "limited_edition_hypercar",
+        "colors": ["verde mantis", "arancio borealis"],
+        "features": ["limited production", "track focused", "lightweight materials"],
+        "brands_interested": ["Lamborghini Revuelto", "McLaren 750S", "Koenigsegg CC850"]
+      },
+      "deal_status": "vip_consultation",
+      "last_contact": "2024-01-31",
+      "notes": "Авиационный бизнес, ищет эксклюзивный гиперкар лимитированной серии"
+    },
+    {
+      "client_id": "MM-2024-014",
+      "name": "Ирина Малахитова",
+      "phone": "+7 (989) 456-78-90",
+      "email": "i.malakhitova@hotels.ru",
+      "company": "Malachite Luxury Hotels",
+      "previous_purchases": [
+        {
+          "brand": "Range Rover",
+          "model": "Vogue Autobiography",
+          "year": 2023,
+          "price": 19000000,
+          "purchase_date": "2023-09-14"
+        }
+      ],
+      "budget_range": {
+        "min": 45000000,
+        "max": 70000000,
+        "currency": "RUB"
+      },
+      "preferences": {
+        "type": "luxury_suv_family",
+        "colors": ["pearl white", "champagne metallic"],
+        "features": ["7 seats", "rear entertainment", "panoramic roof", "air suspension"],
+        "brands_interested": ["Bentley Bentayga EWB", "Rolls-Royce Cullinan", "Mercedes-Maybach GLS"]
+      },
+      "deal_status": "family_consultation",
+      "last_contact": "2024-01-28",
+      "notes": "Владелица сети отелей, нужен семейный автомобиль премиум-класса"
+    },
+    {
+      "client_id": "MM-2024-015",
+      "name": "Валерий Гранитов",
+      "phone": "+7 (990) 567-89-01",
+      "email": "v.granitov@construction.ru",
+      "company": "Granite Construction Empire",
+      "previous_purchases": [
+        {
+          "brand": "Ferrari",
+          "model": "812 Competizione",
+          "year": 2022,
+          "price": 65000000,
+          "purchase_date": "2022-12-01"
+        }
+      ],
+      "budget_range": {
+        "min": 80000000,
+        "max": 200000000,
+        "currency": "RUB"
+      },
+      "preferences": {
+        "type": "collector_grade_hypercar",
+        "colors": ["giallo modena", "nero daytona"],
+        "features": ["naturally aspirated V12", "limited production", "racing heritage"],
+        "brands_interested": ["Ferrari Purosangue", "Lamborghini Sterrato", "McLaren Solus GT"]
+      },
+      "deal_status": "exclusive_preview",
+      "last_contact": "2024-02-01",
+      "notes": "Строительный магнат, серьезный коллекционер, интересуется самыми эксклюзивными новинками"
+    }
+  ],
+  "inventory": [
+    {
+      "stock_id": "INV-2024-001",
+      "brand": "Bentley",
+      "model": "Flying Spur W12",
+      "year": 2024,
+      "color": "Onyx Black",
+      "engine": "W12 6.0L Twin-Turbo",
+      "price": 45000000,
+      "status": "available",
+      "features": ["Mulliner Driving Specification", "Naim Audio", "Rear Seat Entertainment"],
+      "location": "Moscow Showroom"
+    },
+    {
+      "stock_id": "INV-2024-002",
+      "brand": "Bentley",
+      "model": "Continental GT Speed",
+      "year": 2024,
+      "color": "British Racing Green",
+      "engine": "W12 6.0L",
+      "price": 38500000,
+      "status": "available",
+      "features": ["Carbon Ceramic Brakes", "Touring Specification", "Mood Lighting"],
+      "location": "Moscow Showroom"
+    },
+    {
+      "stock_id": "INV-2024-003",
+      "brand": "Bentley",
+      "model": "Bentayga S",
+      "year": 2024,
+      "color": "Glacier White",
+      "engine": "V8 4.0L Twin-Turbo",
+      "price": 35000000,
+      "status": "available",
+      "features": ["Black Specification", "Panoramic Roof", "22 inch Wheels"],
+      "location": "Moscow Showroom"
+    },
+    {
+      "stock_id": "INV-2024-004",
+      "brand": "Rolls-Royce",
+      "model": "Ghost Extended",
+      "year": 2024,
+      "color": "English White",
+      "engine": "V12 6.75L Twin-Turbo",
+      "price": 65000000,
+      "status": "reserved",
+      "features": ["Starlight Headliner", "Bespoke Audio", "Privacy Suite"],
+      "location": "Special Order"
+    },
+    {
+      "stock_id": "INV-2024-005",
+      "brand": "Rolls-Royce",
+      "model": "Cullinan Black Badge",
+      "year": 2024,
+      "color": "Black Diamond",
+      "engine": "V12 6.75L Twin-Turbo",
+      "price": 75000000,
+      "status": "available",
+      "features": ["Black Badge Package", "Night Vision", "Viewing Suite"],
+      "location": "Moscow Showroom"
+    },
+    {
+      "stock_id": "INV-2024-006",
+      "brand": "Ferrari",
+      "model": "296 GTB",
+      "year": 2024,
+      "color": "Rosso Corsa",
+      "engine": "V6 3.0L Hybrid",
+      "price": 55000000,
+      "status": "available",
+      "features": ["Assetto Fiorano Package", "Carbon Fiber Wheels", "JBL Sound System"],
+      "location": "Moscow Showroom"
+    },
+    {
+      "stock_id": "INV-2024-007",
+      "brand": "Aston Martin",
+      "model": "DB12",
+      "year": 2024,
+      "color": "Satin Xenon Grey",
+      "engine": "V8 4.0L Twin-Turbo",
+      "price": 48000000,
+      "status": "available",
+      "features": ["Bowers & Wilkins Audio", "Carbon Roof", "Smoked Tail Lights"],
+      "location": "Moscow Showroom"
+    },
+    {
+      "stock_id": "INV-2024-008",
+      "brand": "Mercedes-Maybach",
+      "model": "S 680",
+      "year": 2024,
+      "color": "Two-tone Obsidian Black / Mojave Silver",
+      "engine": "V12 6.0L Bi-Turbo",
+      "price": 49500000,
+      "status": "available",
+      "features": ["First-Class Rear Seats", "Burmester 4D Sound", "E-Active Body Control"],
+      "location": "Moscow Showroom"
+    },
+    {
+      "stock_id": "INV-2024-009",
+      "brand": "Lamborghini",
+      "model": "Urus Performante",
+      "year": 2024,
+      "color": "Giallo Auge",
+      "engine": "V8 4.0L Twin-Turbo",
+      "price": 42000000,
+      "status": "available",
+      "features": ["Akrapovič Exhaust", "Carbon Fiber Hood", "Alcantara Interior"],
+      "location": "Moscow Showroom"
+    },
+    {
+      "stock_id": "INV-2024-010",
+      "brand": "Rolls-Royce",
+      "model": "Ghost",
+      "year": 2023,
+      "color": "Tempest Grey",
+      "engine": "V12 6.75L Twin-Turbo",
+      "price": 58000000,
+      "status": "available",
+      "features": ["Starlight Headliner", "Effortless Doors", "Champagne Cooler"],
+      "location": "Moscow Showroom"
+    },
+    {
+      "stock_id": "INV-2024-011",
+      "brand": "Bentley",
+      "model": "Continental GT V8",
+      "year": 2023,
+      "color": "Ice White",
+      "engine": "V8 4.0L Twin-Turbo",
+      "price": 33000000,
+      "status": "available",
+      "features": ["City Specification", "Rotating Display", "Bang & Olufsen Audio"],
+      "location": "Moscow Showroom"
+    },
+    {
+      "stock_id": "INV-2024-012",
+      "brand": "McLaren",
+      "model": "Artura",
+      "year": 2024,
+      "color": "McLaren Orange",
+      "engine": "V6 3.0L Twin-Turbo Hybrid",
+      "price": 52000000,
+      "status": "sold",
+      "features": ["Carbon Fiber Monocoque", "Proactive Dampers", "McLaren Track Telemetry"],
+      "location": "Delivered"
+    },
+    {
+      "stock_id": "INV-2024-013",
+      "brand": "Ferrari",
+      "model": "Purosangue",
+      "year": 2024,
+      "color": "Grigio Titanio",
+      "engine": "V12 6.5L Naturally Aspirated",
+      "price": 95000000,
+      "status": "pre_order",
+      "features": ["Active Suspension", "Rear-Wheel Steering", "Ferrari Dynamic Enhancer Plus"],
+      "location": "Factory Order"
+    },
+    {
+      "stock_id": "INV-2024-014",
+      "brand": "Lamborghini",
+      "model": "Revuelto",
+      "year": 2024,
+      "color": "Verde Selvans",
+      "engine": "V12 6.5L + Electric Motors",
+      "price": 120000000,
+      "status": "pre_order",
+      "features": ["LDVI Hybrid System", "Carbon Fiber Monocoque", "Active Aerodynamics"],
+      "location": "Factory Order"
+    },
+    {
+      "stock_id": "INV-2024-015",
+      "brand": "Bentley",
+      "model": "Continental GTC Speed",
+      "year": 2024,
+      "color": "Peacock Blue",
+      "engine": "W12 6.0L Twin-Turbo",
+      "price": 42000000,
+      "status": "available",
+      "features": ["Convertible Soft Top", "All-Wheel Drive", "Mulliner Interior"],
+      "location": "Moscow Showroom"
+    },
+    {
+      "stock_id": "INV-2024-016",
+      "brand": "Rolls-Royce",
+      "model": "Phantom Series II",
+      "year": 2024,
+      "color": "Bespoke Two-Tone Arctic White / Navy Blue",
+      "engine": "V12 6.75L Twin-Turbo",
+      "price": 85000000,
+      "status": "available",
+      "features": ["Bespoke Interior", "Starlight Headliner", "Spirit of Ecstasy Illuminated"],
+      "location": "Moscow Showroom"
+    },
+    {
+      "stock_id": "INV-2024-017",
+      "brand": "Mercedes-Maybach",
+      "model": "SL 680",
+      "year": 2024,
+      "color": "Magno Platinum Silver",
+      "engine": "V12 6.0L Bi-Turbo",
+      "price": 55000000,
+      "status": "available",
+      "features": ["Soft-Close Doors", "Maybach Manufaktur", "Retractable Hardtop"],
+      "location": "Moscow Showroom"
+    },
+    {
+      "stock_id": "INV-2024-018",
+      "brand": "Aston Martin",
+      "model": "DBS 770 Ultimate",
+      "year": 2024,
+      "color": "Metallic Emerald Green",
+      "engine": "V12 5.2L Twin-Turbo",
+      "price": 68000000,
+      "status": "available",
+      "features": ["Carbon Fiber Aero Package", "Michelin Pilot Sport Cup 2", "Ultimate Specification"],
+      "location": "Moscow Showroom"
+    },
+    {
+      "stock_id": "INV-2024-019",
+      "brand": "McLaren",
+      "model": "750S Spider",
+      "year": 2024,
+      "color": "Volcano Yellow",
+      "engine": "V8 4.0L Twin-Turbo",
+      "price": 78000000,
+      "status": "available",
+      "features": ["Retractable Hard Top", "MSO Interior", "Track Pack"],
+      "location": "Moscow Showroom"
+    },
+    {
+      "stock_id": "INV-2024-020",
+      "brand": "Porsche",
+      "model": "911 Turbo S Cabriolet",
+      "year": 2024,
+      "color": "Gentian Blue Metallic",
+      "engine": "H6 3.8L Twin-Turbo",
+      "price": 38000000,
+      "status": "available",
+      "features": ["Sport Chrono Package", "PDCC", "18-Way Adaptive Sports Seats"],
+      "location": "Moscow Showroom"
+    },
+    {
+      "stock_id": "INV-2024-021",
+      "brand": "Lamborghini",
+      "model": "Huracán Tecnica",
+      "year": 2024,
+      "color": "Blu Laufey",
+      "engine": "V10 5.2L Naturally Aspirated",
+      "price": 47000000,
+      "status": "available",
+      "features": ["Rear-Wheel Drive", "LDVI System", "Carbon Fiber Aero"],
+      "location": "Moscow Showroom"
+    },
+    {
+      "stock_id": "INV-2024-022",
+      "brand": "Bentley",
+      "model": "Bentayga Extended Wheelbase",
+      "year": 2024,
+      "color": "Mulliner Pearl White",
+      "engine": "V8 4.0L Twin-Turbo",
+      "price": 48000000,
+      "status": "available",
+      "features": ["Airline Seating", "Refrigerated Compartment", "Naim for Bentley Audio"],
+      "location": "Moscow Showroom"
+    },
+    {
+      "stock_id": "INV-2024-023",
+      "brand": "Ferrari",
+      "model": "SF90 XX Stradale",
+      "year": 2024,
+      "color": "Nero Daytona",
+      "engine": "V8 4.0L Twin-Turbo + Electric",
+      "price": 135000000,
+      "status": "pre_order",
+      "features": ["Track-Focused Setup", "Extreme Aero Package", "Limited Production"],
+      "location": "Factory Order"
+    },
+    {
+      "stock_id": "INV-2024-024",
+      "brand": "Koenigsegg",
+      "model": "CC850",
+      "year": 2024,
+      "color": "Jesko Orange",
+      "engine": "V8 5.0L Twin-Turbo",
+      "price": 180000000,
+      "status": "special_order",
+      "features": ["Engage Shift System", "Active Aerodynamics", "Carbon Fiber Body"],
+      "location": "Special Delivery"
+    },
+    {
+      "stock_id": "INV-2024-025",
+      "brand": "Maserati",
+      "model": "MC20 Cielo",
+      "year": 2024,
+      "color": "Bianco Audace",
+      "engine": "V6 3.0L Twin-Turbo",
+      "price": 45000000,
+      "status": "available",
+      "features": ["Retractable Glass Roof", "Nettuno Engine", "Carbon Fiber Construction"],
+      "location": "Moscow Showroom"
+    },
+    {
+      "stock_id": "INV-2024-026",
+      "brand": "BMW",
+      "model": "XM Label Red",
+      "year": 2024,
+      "color": "Storm Bay Metallic",
+      "engine": "V8 4.4L Twin-Turbo Hybrid",
+      "price": 32000000,
+      "status": "available",
+      "features": ["M Performance Package", "Bowers & Wilkins Diamond", "Laser Light"],
+      "location": "Moscow Showroom"
+    },
+    {
+      "stock_id": "INV-2024-027",
+      "brand": "Aston Martin",
+      "model": "Vantage F1 Edition",
+      "year": 2024,
+      "color": "Satin Aston Martin Racing Green",
+      "engine": "V8 4.0L Twin-Turbo",
+      "price": 58000000,
+      "status": "available",
+      "features": ["F1 Safety Car Livery", "Track Performance Pack", "Limited Edition"],
+      "location": "Moscow Showroom"
+    },
+    {
+      "stock_id": "INV-2024-028",
+      "brand": "Rolls-Royce",
+      "model": "Spectre",
+      "year": 2024,
+      "color": "Tempest Grey",
+      "engine": "Electric Drivetrain",
+      "price": 72000000,
+      "status": "available",
+      "features": ["Spirit of Ecstasy", "Magic Carpet Ride", "Bespoke Audio"],
+      "location": "Moscow Showroom"
+    },
+    {
+      "stock_id": "INV-2024-029",
+      "brand": "Mercedes-AMG",
+      "model": "One",
+      "year": 2024,
+      "color": "AMG Green Hell Magno",
+      "engine": "V6 1.6L Turbo + Electric (F1 Technology)",
+      "price": 250000000,
+      "status": "allocation_available",
+      "features": ["F1 Powertrain", "Active Aerodynamics", "Project One Technology"],
+      "location": "Allocation List"
+    },
+    {
+      "stock_id": "INV-2024-030",
+      "brand": "Pagani",
+      "model": "Utopia",
+      "year": 2024,
+      "color": "Carbonio",
+      "engine": "V12 6.0L Twin-Turbo",
+      "price": 195000000,
+      "status": "waiting_list",
+      "features": ["Carbo-Titanium Construction", "Bespoke Interior", "Limited Production"],
+      "location": "Factory Allocation"
+    }
+  ]
+} 
