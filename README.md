@@ -213,10 +213,6 @@ streamlit run streamlit_app.py
 2. Убедитесь что streamlit_app.py в корне
 3. Посмотрите логи деплоя
 
-### 📞 Поддержка
-- **GitHub Issues:** [Создать тикет](https://github.com/yourusername/million-miles-ai/issues)
-- **Email:** support@million-miles-ai.com
-
 ---
 
 ## 📈 Производительность
@@ -499,9 +495,7 @@ pip install --upgrade -r requirements.txt
 
 **🌟 Полезные ссылки:**
 
-[⭐ Star на GitHub](https://github.com/yourusername/million-miles-ai) • 
 [🚀 Live Demo](https://million-miles-ai.streamlit.app) • 
-[📖 Documentation](https://docs.million-miles-ai.com) • 
 ---
 
 
