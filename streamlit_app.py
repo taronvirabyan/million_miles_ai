@@ -118,7 +118,7 @@ st.markdown("""
         line-height: 1.6;
     }
     
-    /* Поле ввода */
+    /* Поле ввода чата */
     .stChatInput > div {
         border-radius: 25px !important;
         border: 2px solid #e0e0e0 !important;
@@ -127,6 +127,35 @@ st.markdown("""
     
     .stChatInput textarea {
         color: #1a1a1a !important;
+        background: white !important;
+        font-size: 16px !important;
+    }
+    
+    .stChatInput textarea::placeholder {
+        color: #888888 !important;
+        opacity: 1 !important;
+    }
+    
+    /* Дополнительные селекторы для поля ввода */
+    [data-testid="stChatInput"] textarea {
+        color: #1a1a1a !important;
+        background: white !important;
+    }
+    
+    [data-testid="stChatInput"] input {
+        color: #1a1a1a !important;
+        background: white !important;
+    }
+    
+    /* Общие правила для всех полей ввода */
+    input, textarea {
+        color: #1a1a1a !important;
+        background: white !important;
+    }
+    
+    input:focus, textarea:focus {
+        color: #1a1a1a !important;
+        background: white !important;
     }
     
     /* Боковая панель */
@@ -141,9 +170,14 @@ st.markdown("""
     }
     
     section[data-testid="stSidebar"] .stTextInput input {
-        background: rgba(255,255,255,0.1) !important;
+        background: rgba(255,255,255,0.9) !important;
         border: 1px solid rgba(255,255,255,0.3) !important;
-        color: white !important;
+        color: #1a1a1a !important;
+    }
+    
+    section[data-testid="stSidebar"] .stSelectbox select {
+        background: rgba(255,255,255,0.9) !important;
+        color: #1a1a1a !important;
     }
     
     /* Метрики */
