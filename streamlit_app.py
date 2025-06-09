@@ -41,187 +41,415 @@ st.set_page_config(
 # Пользовательские стили с улучшенным дизайном
 st.markdown("""
 <style>
-    /* Основные стили */
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap');
+    
+    /* === ОСНОВНЫЕ СТИЛИ === */
     .stApp {
-        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        background: linear-gradient(145deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%);
+        background-attachment: fixed;
     }
     
-    /* Заголовок */
-    .main-header {
-        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-        color: white;
-        padding: 2rem;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        text-align: center;
+    .stApp::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            radial-gradient(circle at 20% 80%, rgba(220, 20, 60, 0.03) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.03) 0%, transparent 50%),
+            radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.01) 0%, transparent 50%);
+        pointer-events: none;
+        z-index: -1;
+    }
+    
+    /* === ПРЕМИАЛЬНЫЙ ЗАГОЛОВОК === */
+    .luxury-header {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+        border: 2px solid transparent;
+        background-clip: padding-box;
+        position: relative;
+        padding: 3rem 2rem;
+        border-radius: 20px;
         margin-bottom: 2rem;
+        text-align: center;
+        box-shadow: 
+            0 20px 60px rgba(0, 0, 0, 0.7),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1),
+            0 0 0 1px rgba(220, 20, 60, 0.3);
+        overflow: hidden;
     }
     
-    .main-header h1 {
-        color: white !important;
-        font-size: 2.5rem;
-        margin: 0;
-        font-family: 'Georgia', serif;
+    .luxury-header::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(45deg, #dc143c, #ffd700, #dc143c, #ffd700);
+        background-size: 400% 400%;
+        animation: luxury-border 4s ease-in-out infinite;
+        border-radius: 22px;
+        z-index: -1;
     }
     
-    .main-header p {
-        color: #f0f0f0 !important;
-        font-size: 1.1rem;
-        margin-top: 0.5rem;
+    @keyframes luxury-border {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
     }
     
-    /* Кнопки */
+    .luxury-header h1 {
+        font-family: 'Playfair Display', serif !important;
+        color: #ffd700 !important;
+        font-size: 3.5rem !important;
+        font-weight: 700 !important;
+        margin: 0 !important;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        letter-spacing: 2px;
+    }
+    
+    .luxury-header .subtitle {
+        font-family: 'Inter', sans-serif !important;
+        color: #e8e8e8 !important;
+        font-size: 1.2rem !important;
+        margin-top: 1rem !important;
+        font-weight: 300 !important;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+    
+    .luxury-header .luxury-icon {
+        font-size: 4rem;
+        background: linear-gradient(45deg, #dc143c, #ffd700);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 1rem;
+        filter: drop-shadow(0 0 10px rgba(220, 20, 60, 0.3));
+    }
+    
+    /* === ПРЕМИАЛЬНЫЕ КНОПКИ === */
     .stButton > button {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white !important;
-        border-radius: 25px;
-        border: none;
-        padding: 0.6rem 2rem;
-        font-weight: 600;
-        transition: all 0.3s;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        background: linear-gradient(135deg, #2a2a2a 0%, #3d3d3d 100%) !important;
+        color: #ffd700 !important;
+        border: 2px solid #dc143c !important;
+        border-radius: 30px !important;
+        padding: 0.8rem 2.5rem !important;
+        font-family: 'Inter', sans-serif !important;
+        font-weight: 600 !important;
+        font-size: 0.95rem !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        box-shadow: 
+            0 8px 32px rgba(220, 20, 60, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+        position: relative !important;
+        overflow: hidden !important;
+    }
+    
+    .stButton > button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(220, 20, 60, 0.2), transparent);
+        transition: left 0.5s;
     }
     
     .stButton > button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        background: linear-gradient(135deg, #3d3d3d 0%, #4a4a4a 100%) !important;
+        border-color: #ffd700 !important;
+        transform: translateY(-3px) !important;
+        box-shadow: 
+            0 15px 45px rgba(220, 20, 60, 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
     }
     
-    /* Чат сообщения */
+    .stButton > button:hover::before {
+        left: 100%;
+    }
+    
+    /* === ЭЛИТНЫЕ ЧАТ СООБЩЕНИЯ === */
     .stChatMessage {
-        background-color: white !important;
-        border-radius: 15px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        margin-bottom: 1rem;
-        padding: 1rem !important;
+        background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%) !important;
+        border: 1px solid rgba(220, 20, 60, 0.2) !important;
+        border-radius: 20px !important;
+        margin-bottom: 1.5rem !important;
+        padding: 1.5rem !important;
+        box-shadow: 
+            0 10px 40px rgba(0, 0, 0, 0.6),
+            inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+        backdrop-filter: blur(10px) !important;
+        position: relative !important;
+        overflow: hidden !important;
+    }
+    
+    .stChatMessage::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #dc143c, #ffd700, #dc143c);
+        opacity: 0.6;
     }
     
     /* Сообщения пользователя */
     [data-testid="chat-message-user"] {
-        background: linear-gradient(135deg, #e0f2fe 0%, #cce7ff 100%) !important;
-        margin-left: 15%;
+        background: linear-gradient(135deg, #2d1810 0%, #3d2418 100%) !important;
+        border: 1px solid rgba(255, 215, 0, 0.3) !important;
+        margin-left: 10% !important;
+    }
+    
+    [data-testid="chat-message-user"]::before {
+        background: linear-gradient(90deg, #ffd700, #dc143c, #ffd700) !important;
     }
     
     /* Сообщения ассистента */
     [data-testid="chat-message-assistant"] {
-        background: white !important;
-        margin-right: 15%;
-        border: 1px solid #e0e0e0;
+        background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%) !important;
+        border: 1px solid rgba(220, 20, 60, 0.2) !important;
+        margin-right: 10% !important;
     }
     
-    /* Исправляем видимость текста */
-    .stChatMessage p, 
+    /* Текст в сообщениях */
+    .stChatMessage p,
     .stChatMessage div,
     .stChatMessage span,
-    .stChatMessage * {
-        color: #1a1a1a !important;
-        line-height: 1.6;
+    .stChatMessage *,
+    .stChatMessage strong {
+        color: #e8e8e8 !important;
+        font-family: 'Inter', sans-serif !important;
+        line-height: 1.7 !important;
+        font-weight: 400 !important;
     }
     
-    /* Поле ввода чата */
+    .stChatMessage strong {
+        color: #ffd700 !important;
+        font-weight: 600 !important;
+    }
+    
+    .stChatMessage h1, .stChatMessage h2, .stChatMessage h3 {
+        color: #ffd700 !important;
+        font-family: 'Playfair Display', serif !important;
+    }
+    
+    /* === ЭЛИТНОЕ ПОЛЕ ВВОДА === */
     .stChatInput > div {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%) !important;
+        border: 2px solid rgba(220, 20, 60, 0.3) !important;
         border-radius: 25px !important;
-        border: 2px solid #e0e0e0 !important;
-        background: white !important;
+        box-shadow: 
+            0 10px 40px rgba(0, 0, 0, 0.6),
+            inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+        backdrop-filter: blur(15px) !important;
     }
     
     .stChatInput textarea {
-        color: #1a1a1a !important;
-        background: white !important;
-        font-size: 16px !important;
+        color: #e8e8e8 !important;
+        font-family: 'Inter', sans-serif !important;
+        background: transparent !important;
+        border: none !important;
+        font-size: 1rem !important;
     }
     
     .stChatInput textarea::placeholder {
-        color: #888888 !important;
-        opacity: 1 !important;
+        color: rgba(232, 232, 232, 0.5) !important;
+        font-style: italic !important;
     }
     
     /* Дополнительные селекторы для поля ввода */
-    [data-testid="stChatInput"] textarea {
-        color: #1a1a1a !important;
-        background: white !important;
-    }
-    
+    [data-testid="stChatInput"] textarea,
     [data-testid="stChatInput"] input {
-        color: #1a1a1a !important;
-        background: white !important;
+        color: #e8e8e8 !important;
+        background: transparent !important;
     }
     
     /* Общие правила для всех полей ввода */
     input, textarea {
-        color: #1a1a1a !important;
-        background: white !important;
+        color: #e8e8e8 !important;
     }
     
     input:focus, textarea:focus {
-        color: #1a1a1a !important;
-        background: white !important;
+        color: #e8e8e8 !important;
     }
     
-    /* Боковая панель */
+    /* === РОСКОШНАЯ БОКОВАЯ ПАНЕЛЬ === */
     section[data-testid="stSidebar"] {
-        background: linear-gradient(180deg, #1e3c72 0%, #2a5298 100%);
+        background: linear-gradient(180deg, #0d0d0d 0%, #1a1a1a 50%, #0d0d0d 100%) !important;
+        border-right: 2px solid rgba(220, 20, 60, 0.2) !important;
     }
     
-    section[data-testid="stSidebar"] .stMarkdown h2,
+    section[data-testid="stSidebar"]::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(180deg, #dc143c, #ffd700, #dc143c);
+        opacity: 0.6;
+    }
+    
+    section[data-testid="stSidebar"] .stMarkdown h2 {
+        color: #ffd700 !important;
+        font-family: 'Playfair Display', serif !important;
+        text-align: center !important;
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.3) !important;
+    }
+    
     section[data-testid="stSidebar"] .stMarkdown p,
     section[data-testid="stSidebar"] label {
-        color: white !important;
+        color: #e8e8e8 !important;
+        font-family: 'Inter', sans-serif !important;
+        font-weight: 300 !important;
     }
     
-    section[data-testid="stSidebar"] .stTextInput input {
-        background: rgba(255,255,255,0.9) !important;
-        border: 1px solid rgba(255,255,255,0.3) !important;
-        color: #1a1a1a !important;
-    }
-    
+    section[data-testid="stSidebar"] .stTextInput input,
     section[data-testid="stSidebar"] .stSelectbox select {
-        background: rgba(255,255,255,0.9) !important;
-        color: #1a1a1a !important;
+        background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%) !important;
+        border: 1px solid rgba(220, 20, 60, 0.3) !important;
+        color: #e8e8e8 !important;
+        border-radius: 10px !important;
+        font-family: 'Inter', sans-serif !important;
     }
     
-    /* Метрики */
-    .metric-card {
-        background: white;
-        padding: 1.5rem;
-        border-radius: 15px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    /* === ЭЛИТНЫЕ МЕТРИКИ === */
+    .luxury-metric-card {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+        border: 1px solid rgba(220, 20, 60, 0.2);
+        padding: 2rem;
+        border-radius: 20px;
         text-align: center;
-        transition: all 0.3s;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         height: 100%;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 
+            0 10px 40px rgba(0, 0, 0, 0.6),
+            inset 0 1px 0 rgba(255, 255, 255, 0.05);
     }
     
-    .metric-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    .luxury-metric-card::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(45deg, #dc143c, #ffd700);
+        background-size: 200% 200%;
+        animation: luxury-glow 3s ease-in-out infinite;
+        border-radius: 22px;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.4s;
     }
     
-    .metric-card h3 {
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
+    .luxury-metric-card:hover::before {
+        opacity: 0.3;
     }
     
-    .metric-card p {
-        color: #555 !important;
-        margin: 0;
+    @keyframes luxury-glow {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
     }
     
-    /* Разделители */
-    hr {
-        margin: 2rem 0;
-        border: none;
-        border-top: 1px solid rgba(0,0,0,0.1);
+    .luxury-metric-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        border-color: rgba(255, 215, 0, 0.5);
+        box-shadow: 
+            0 20px 60px rgba(0, 0, 0, 0.8),
+            0 0 30px rgba(220, 20, 60, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1);
     }
     
-    /* Информационные блоки */
+    .luxury-metric-card .metric-icon {
+        font-size: 3rem;
+        background: linear-gradient(45deg, #dc143c, #ffd700);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 1rem;
+        filter: drop-shadow(0 0 10px rgba(220, 20, 60, 0.3));
+    }
+    
+    .luxury-metric-card h3 {
+        color: #ffd700 !important;
+        font-family: 'Playfair Display', serif !important;
+        font-size: 1.5rem !important;
+        margin-bottom: 0.5rem !important;
+        font-weight: 700 !important;
+    }
+    
+    .luxury-metric-card p {
+        color: #e8e8e8 !important;
+        font-family: 'Inter', sans-serif !important;
+        margin: 0 !important;
+        font-weight: 300 !important;
+        font-size: 0.9rem !important;
+        line-height: 1.4 !important;
+    }
+    
+    /* === ПРЕМИАЛЬНЫЕ ЭЛЕМЕНТЫ === */
     .stAlert {
-        border-radius: 10px;
-        border: none;
+        background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%) !important;
+        border: 1px solid rgba(220, 20, 60, 0.3) !important;
+        border-radius: 15px !important;
+        color: #e8e8e8 !important;
     }
     
-    /* Спиннер */
     .stSpinner > div {
-        color: #667eea !important;
+        border-color: #dc143c transparent #ffd700 transparent !important;
+    }
+    
+    /* === РАЗДЕЛИТЕЛИ === */
+    hr {
+        margin: 3rem 0 !important;
+        border: none !important;
+        height: 1px !important;
+        background: linear-gradient(90deg, transparent, rgba(220, 20, 60, 0.5), transparent) !important;
+    }
+    
+    /* === СКРОЛЛБАР === */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+        background: #1a1a1a;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, #dc143c, #ffd700);
+        border-radius: 4px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(180deg, #ffd700, #dc143c);
+    }
+    
+    /* === АДАПТИВНОСТЬ === */
+    @media (max-width: 768px) {
+        .luxury-header h1 {
+            font-size: 2.5rem !important;
+        }
+        
+        .luxury-header {
+            padding: 2rem 1rem !important;
+        }
+        
+        [data-testid="chat-message-user"] {
+            margin-left: 5% !important;
+        }
+        
+        [data-testid="chat-message-assistant"] {
+            margin-right: 5% !important;
+        }
     }
 </style>
 """, unsafe_allow_html=True)
@@ -231,9 +459,23 @@ def reset_chat_session():
     """Очищает историю сообщений и создает новый ID сессии."""
     st.session_state.messages = []
     st.session_state.session_id = str(uuid.uuid4())
-    welcome_message = """🌟 Добро пожаловать в Million Miles!
-Я Виктория, ваш персональный консультант по премиальным автомобилям. 
-Расскажите о ваших предпочтениях, и я подберу идеальный автомобиль именно для вас."""
+    welcome_message = """## 🏆 Добро пожаловать в Million Miles
+
+**Я Виктория** — ваш персональный консультант по эксклюзивным автомобилям премиум-класса.
+
+### 🚗 Наша коллекция:
+**Ferrari** • **Bentley** • **Rolls-Royce** • **Lamborghini** • **Porsche** • **Mercedes-Maybach** • **Aston Martin** • **McLaren**
+
+### ✨ Что мы предлагаем:
+• **Персональный подбор** автомобиля под ваши потребности
+• **Эксклюзивные предложения** от официальных дилеров  
+• **VIP-сервис** на всех этапах сделки
+• **Быстрая доставка** от 2 недель по России
+
+Расскажите о ваших предпочтениях, бюджете и стиле жизни — я подберу идеальный автомобиль именно для вас.
+
+---
+💎 *В Million Miles каждый клиент — особенный*"""
     st.session_state.messages.append({"role": "assistant", "content": welcome_message})
 
 # Инициализация сессии
@@ -282,9 +524,10 @@ def get_assistant():
 
 # Заголовок с улучшенным дизайном
 st.markdown("""
-<div class="main-header">
-    <h1>🚗 Million Miles</h1>
-    <p>Элитный консалтинг по премиальным автомобилям</p>
+<div class="luxury-header">
+    <div class="luxury-icon">🏆</div>
+    <h1>Million Miles</h1>
+    <p class="subtitle">Премиальный сервис по поиску и доставке элитных автомобилей</p>
 </div>
 """, unsafe_allow_html=True)
 
@@ -347,32 +590,36 @@ col1, col2, col3, col4 = st.columns(4)
 
 with col1:
     st.markdown("""
-    <div class="metric-card">
-        <h3>🏆</h3>
-        <p><strong>15+ брендов</strong><br>Премиум класса</p>
+    <div class="luxury-metric-card">
+        <div class="metric-icon">🚗</div>
+        <h3>9 127</h3>
+        <p>Проданных автомобилей<br><em>Ferrari • Bentley • Rolls-Royce</em></p>
     </div>
     """, unsafe_allow_html=True)
 
 with col2:
     st.markdown("""
-    <div class="metric-card">
-        <h3>👥</h3>
-        <p><strong>10 000+</strong><br>Счастливых владельцев</p>
+    <div class="luxury-metric-card">
+        <div class="metric-icon">👨‍💼</div>
+        <h3>19</h3>
+        <p>Экспертов по подбору<br><em>Персональные консультанты</em></p>
     </div>
     """, unsafe_allow_html=True)
 
 with col3:
     st.markdown("""
-    <div class="metric-card">
-        <h3>📅</h3>
-        <p><strong>С 2009 года</strong><br>Лидер рынка</p>
+    <div class="luxury-metric-card">
+        <div class="metric-icon">⚡</div>
+        <h3>от 2 недель</h3>
+        <p>Доставка по России<br><em>Быстрая логистика</em></p>
     </div>
     """, unsafe_allow_html=True)
 
 with col4:
     st.markdown("""
-    <div class="metric-card">
-        <h3>💎</h3>
-        <p><strong>VIP сервис</strong><br>24/7 консьерж</p>
+    <div class="luxury-metric-card">
+        <div class="metric-icon">💎</div>
+        <h3>С 2009 года</h3>
+        <p>Лидер рынка<br><em>16 лет безупречного сервиса</em></p>
     </div>
     """, unsafe_allow_html=True) 
