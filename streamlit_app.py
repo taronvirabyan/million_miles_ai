@@ -9,6 +9,11 @@ import os
 from datetime import datetime
 import sys
 import uuid
+from pathlib import Path
+
+# Добавляем текущую директорию в Python path для импортов
+current_dir = Path(__file__).parent
+sys.path.insert(0, str(current_dir))
 
 # Загрузка переменных окружения для локальной разработки
 try:
@@ -17,8 +22,13 @@ try:
 except ImportError:
     pass
 
-# Импортируем AI движок
-from ai_engine_improved import ImprovedLuxuryCarAISalesAssistant
+# Импортируем AI движок с правильным путем
+try:
+    from ai_engine_improved import ImprovedLuxuryCarAISalesAssistant
+except ImportError:
+    # Fallback - попробуем из папки bot
+    sys.path.insert(0, str(current_dir / "bot"))
+    from ai_engine_improved import ImprovedLuxuryCarAISalesAssistant
 
 # Настройка страницы
 st.set_page_config(
@@ -204,7 +214,7 @@ if 'session_id' not in st.session_state:
 # Создание AI-ассистента с безопасным получением API ключа
 @st.cache_resource
 def get_assistant():
-    """Создание AI-ассистента с безопасным API ключом"""
+    """Создание AI-ассистента с безопасным API ключом и автоопределением путей"""
     api_key = None
     
     # 1. Сначала пробуем Streamlit secrets (для продакшена)
@@ -233,6 +243,7 @@ def get_assistant():
         st.error("⚠️ API ключ некорректный или пустой")
         st.stop()
     
+    # Создаем ассистента с автоопределением путей
     return ImprovedLuxuryCarAISalesAssistant(ai_provider="gemini")
 
 # Заголовок с улучшенным дизайном

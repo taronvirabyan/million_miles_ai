@@ -8,6 +8,7 @@ import os
 from typing import Dict, List, Optional, Any
 from datetime import datetime
 from dataclasses import dataclass
+from pathlib import Path
 
 # Загрузка переменных окружения для локальной разработки
 try:
@@ -40,16 +41,45 @@ class ClientContext:
 class ImprovedLuxuryCarAISalesAssistant:
     """ЭКСПЕРТНЫЙ AI-ассистент - Gemini API + реальный инвентарь"""
     
-    def __init__(self, crm_data_path: str = "data/crm_data.json", ai_provider: str = "gemini"):
+    def __init__(self, crm_data_path: Optional[str] = None, ai_provider: str = "gemini"):
+        # Автоматически определяем правильный путь к данным
+        if crm_data_path is None:
+            crm_data_path = self._find_data_file()
+        
         self.crm_data = self._load_crm_data(crm_data_path)
         self.ai_provider = ai_provider
+
+    def _find_data_file(self) -> str:
+        """Автоматически находит файл данных независимо от рабочей директории"""
+        # Возможные пути к файлу данных
+        possible_paths = [
+            "data/crm_data.json",           # Если запускаем из корня
+            "../data/crm_data.json",        # Если запускаем из bot/
+            "./data/crm_data.json",         # Относительно текущей директории
+            str(Path(__file__).parent / "data" / "crm_data.json"),  # Относительно файла движка
+            str(Path(__file__).parent.parent / "data" / "crm_data.json"),  # На уровень выше
+        ]
+        
+        for path in possible_paths:
+            if os.path.exists(path):
+                print(f"✅ Найден файл данных: {path}")
+                return path
+        
+        print("⚠️ Файл данных не найден, будут использованы демо-данные")
+        return "data/crm_data.json"  # Fallback
 
     def _load_crm_data(self, path: str) -> Dict:
         """Загрузка CRM данных"""
         try:
             with open(path, 'r', encoding='utf-8') as f:
-                return json.load(f)
+                data = json.load(f)
+                print(f"✅ CRM данные загружены: {len(data.get('clients', []))} клиентов, {len(data.get('inventory', []))} автомобилей")
+                return data
         except FileNotFoundError:
+            print(f"⚠️ Файл {path} не найден, используем демо-данные")
+            return self._get_demo_data()
+        except Exception as e:
+            print(f"❌ Ошибка загрузки данных: {e}")
             return self._get_demo_data()
     
     def _get_demo_data(self) -> Dict:
