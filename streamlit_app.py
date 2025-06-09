@@ -11,7 +11,7 @@ import sys
 import uuid
 
 # Импортируем AI движок
-from bot.ai_engine_improved import ImprovedLuxuryCarAISalesAssistant
+from ai_engine_improved import ImprovedLuxuryCarAISalesAssistant
 
 # Настройка страницы
 st.set_page_config(
