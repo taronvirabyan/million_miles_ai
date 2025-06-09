@@ -10,6 +10,13 @@ from datetime import datetime
 import sys
 import uuid
 
+# Загрузка переменных окружения для локальной разработки
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
 # Импортируем AI движок
 from ai_engine_improved import ImprovedLuxuryCarAISalesAssistant
 
@@ -198,12 +205,32 @@ if 'session_id' not in st.session_state:
 @st.cache_resource
 def get_assistant():
     """Создание AI-ассистента с безопасным API ключом"""
-    # БЕЗОПАСНОЕ получение API ключа из Streamlit secrets
+    api_key = None
+    
+    # 1. Сначала пробуем Streamlit secrets (для продакшена)
     try:
         api_key = st.secrets["GEMINI_API_KEY"]
         os.environ["GEMINI_API_KEY"] = api_key
-    except KeyError:
-        st.error("⚠️ API ключ не настроен. Обратитесь к администратору.")
+        print("✅ API ключ загружен из Streamlit secrets")
+    except (KeyError, AttributeError):
+        # 2. Fallback на переменные окружения (для локальной разработки)
+        api_key = os.getenv("GEMINI_API_KEY")
+        if api_key:
+            print("✅ API ключ загружен из переменных окружения")
+        else:
+            st.error("""⚠️ **API ключ не найден!**
+            
+**Для локальной разработки:**
+- Убедитесь что файл `.env` содержит: `GEMINI_API_KEY=ваш_ключ`
+- Или добавьте ключ в `.streamlit/secrets.toml`
+
+**Для Streamlit Cloud:**
+- Добавьте `GEMINI_API_KEY` в Advanced Settings при деплое
+            """)
+            st.stop()
+    
+    if not api_key or len(api_key.strip()) < 10:
+        st.error("⚠️ API ключ некорректный или пустой")
         st.stop()
     
     return ImprovedLuxuryCarAISalesAssistant(ai_provider="gemini")

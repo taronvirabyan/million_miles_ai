@@ -9,6 +9,13 @@ from typing import Dict, List, Optional, Any
 from datetime import datetime
 from dataclasses import dataclass
 
+# Загрузка переменных окружения для локальной разработки
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
 # Только Gemini API
 try:
     from google import genai
